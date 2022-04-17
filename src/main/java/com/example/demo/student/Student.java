@@ -9,11 +9,11 @@ public class Student {
     private LocalDate dob;
     private Integer age;
 
-    // why do we have an empty constructor?
+    //TODO why do we have an empty constructor?
     public Student() {
     }
 
-    // why do we have a constructor with all fields
+    //TODO why do we have a constructor with all fields
     public Student(Long id, String name, String email, LocalDate dob, Integer age) {
         this.id = id;
         this.name = name;
@@ -22,7 +22,7 @@ public class Student {
         this.age = age;
     }
 
-    // why do we have a constructor with all the fields except for id?
+    //TODO why do we have a constructor with all the fields except for id?
     public Student(String name, String email, LocalDate dob, Integer age) {
         this.name = name;
         this.email = email;
@@ -31,7 +31,7 @@ public class Student {
     }
 
 
-    // Getters and Setters
+    //TODO Getters and Setters
 
     public Long getId() {
         return id;
@@ -74,7 +74,7 @@ public class Student {
     }
 
 
-    // what is the toString method for?
+    //TODO what is the toString method for?
     @Override
     public String toString() {
         return "Student{" +

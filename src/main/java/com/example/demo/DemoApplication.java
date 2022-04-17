@@ -21,8 +21,8 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
 
-    // method
-	@GetMapping // <- GetMapping + the @RestController makes this class into an RESTful method to GET some data
+    //
+	@GetMapping //TODO <- GetMapping + the @RestController makes this class into an RESTful method to GET some data
 	public String hello() {
 		return "Hello World";
 	}
