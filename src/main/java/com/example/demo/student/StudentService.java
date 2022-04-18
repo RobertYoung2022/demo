@@ -8,11 +8,11 @@ import java.time.Month;
 import java.util.List;
 
 //TODO
-// THIS IS THE BUSINESS LAYER -
+// THIS IS THE SERVICE LAYER -
 // BRIDGE BETWEEN API AND DATA ACCESS LAYERS
-// THE LOGIC
+// THE BUSINESS OR BETTER YET LOGIC
 
-@Service // annotates this will be the service class - business layer aka logic
+@Service // annotates this will be the service class
 //TODO Service tag - makes this class into a Javabean
 public class StudentService {
     public List<Student> getStudents() {
@@ -20,17 +20,17 @@ public class StudentService {
                 new Student(
                         1L,
                         "Lupe",
-                        "lupe@her@gkail.io",
+                        "lupe@her@gmail.io",
                         LocalDate.of(2000, Month.OCTOBER, 18),
                         18
                 ),
                 new Student(
                         2L,
                         "Ronin",
-                        "ronin@he@gkail.io",
+                        "ronin@he@gmail.io",
                         LocalDate.of(2008, Month.JULY, 21),
                         32
                 )
         );
-    }
+    } //TODO:
 }
