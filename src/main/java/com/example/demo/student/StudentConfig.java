@@ -19,14 +19,14 @@ public class StudentConfig {
             Student lupe = new Student(
                     "Lupe",
                     "lupe@her@gmail.io",
-                    LocalDate.of(2000, OCTOBER, 18),
-                    18
+                    LocalDate.of(2000, OCTOBER, 18)
+                    //TODO: removed age field
             );
             Student ronin = new Student(
                     "Ronin",
                     "ronin@he@gmail.io",
-                    LocalDate.of(2008, JULY, 21),
-                    32
+                    LocalDate.of(2008, JULY, 21)
+                    //TODO: removed age field
             );
 
             //How to save student to the database

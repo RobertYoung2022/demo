@@ -2,6 +2,8 @@ package com.example.demo.student;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.Period;
+
 @Entity // make this able to connect to postgres db?
 @Table // linking this as a table on my students database?
 public class Student {
@@ -20,27 +22,28 @@ public class Student {
     private String name;
     private String email;
     private LocalDate dob;
+    @Transient //TODO: makes anything below it not apart of the database
     private Integer age;
 
-    //TODO why do we have an empty constructor?
+    //TODO: why do we have an empty constructor?
     public Student() {
     }
 
-    //TODO why do we have a constructor with all fields
-    public Student(Long id, String name, String email, LocalDate dob, Integer age) {
+    //TODO: why do we have a constructor with all fields
+    public Student(Long id, String name, String email, LocalDate dob) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.dob = dob;
-        this.age = age;
+//        this.age = age; // not needed if using transient annotation
     }
 
     //TODO why do we have a constructor with all the fields except for id?
-    public Student(String name, String email, LocalDate dob, Integer age) {
+    public Student(String name, String email, LocalDate dob) {
         this.name = name;
         this.email = email;
         this.dob = dob;
-        this.age = age;
+//        this.age = age; // not needed if using transient annotation
     }
 
 
@@ -79,7 +82,7 @@ public class Student {
     }
 
     public Integer getAge() {
-        return age;
+        return Period.between(dob, LocalDate.now()).getYears();
     }
 
     public void setAge(Integer age) {
