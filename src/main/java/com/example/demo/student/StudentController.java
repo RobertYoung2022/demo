@@ -1,6 +1,7 @@
 package com.example.demo.student;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,4 +33,19 @@ public class StudentController {
     public void registerNewStudent(@RequestBody Student student) {
         pickStudentService.addNewStudent(student);
     }
+
+    @DeleteMapping(path = "{studentId}")
+    public void deleteStudent(@PathVariable("studentId") Long studentId) {
+        pickStudentService.deleteStudent(studentId); // .deleteStudent() <- needs to have method in service
+    }
+
+
+    @PutMapping(path = "{studentId}")
+    public void updateStudent(
+            @PathVariable("studentId") Long studentId,
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String email) {
+        pickStudentService.updateStudent(studentId, name, email);
+    }
+
 }

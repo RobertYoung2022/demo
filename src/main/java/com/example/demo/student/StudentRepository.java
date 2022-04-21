@@ -9,6 +9,7 @@ import java.util.Optional;
 
 //TODO: THIS IS THE DATA ACCESS LAYER
 @Repository // makes this the repo to use - USED FOR DATA ACCESS
+// TODO: Repositories are similar to DAOs -- abstraction of interacting with the database
 
                         //what repo to work with / id:type for that table
 public interface StudentRepository extends JpaRepository<Student, Long> {
@@ -20,4 +21,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
     // SELECT * FROM student WHERE email = ?
     Optional<Student> findStudentByEmail(String email);
+    Optional<Student> findStudentByName(String name);
+
+    //TODO: NATIVE QUERY - research ****
 }
